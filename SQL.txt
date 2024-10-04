@@ -1,0 +1,39 @@
+USE [Contacts_DB]
+GO
+/****** Object:  Table [dbo].[loginTable]    Script Date: 24/02/16 5:05:49 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[loginTable](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[username] [varchar](150) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+/****** Object:  Table [dbo].[MyContacts]    Script Date: 24/02/16 5:05:49 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[MyContacts](
+	[ContactID] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](250) NOT NULL,
+	[Family] [nvarchar](250) NOT NULL,
+	[Age] [int] NOT NULL,
+	[Mobile] [varchar](50) NOT NULL,
+	[Email] [nvarchar](250) NOT NULL,
+	[Address] [nvarchar](max) NULL,
+ CONSTRAINT [PK_MyContacts] PRIMARY KEY CLUSTERED 
+(
+	[ContactID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+USE [master]
+GO
+ALTER DATABASE [Contacts_DB] SET  READ_WRITE 
+GO
